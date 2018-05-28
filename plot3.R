@@ -1,6 +1,6 @@
 setwd("C://EPC")
-dataset <- read.table ("./household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?", stringsAsFactors=F)
-data <- dataset[dataset$Date %in% c("1/2/2007","2/2/2007"),]
+dataset <- read.table ("household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?", stringsAsFactors=F)
+data <- dataset(dataset$Date %in% c("1/2/2007","2/2/2007"))
 png(filename="plot3.png", width=480, height=480, units="px")
 plot(strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S"), data$Sub_metering_1, type="l", col="black", ylab="Energy sub metering", xlab="")
 lines(strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S"),data$Sub_metering_2, type="l", col="red")
